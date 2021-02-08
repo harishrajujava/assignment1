@@ -20,8 +20,7 @@ public class Item {
 	private Long id;
 	private String name;
 	private String planId;
-	@OneToOne
-	private HardSKU skuId;
+	private String skuId;
 	private int quantity;
 	private String telephoneNumber;
 	@Enumerated(EnumType.STRING)
@@ -52,10 +51,10 @@ public class Item {
 	public void setPlanId(String planId) {
 		this.planId = planId;
 	}
-	public HardSKU getSkuId() {
+	public String getSkuId() {
 		return skuId;
 	}
-	public void setSkuId(HardSKU skuId) {
+	public void setSkuId(String skuId) {
 		this.skuId = skuId;
 	}
 	public Integer getQuantity() {
