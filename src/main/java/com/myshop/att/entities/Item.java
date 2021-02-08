@@ -3,6 +3,8 @@ package com.myshop.att.entities;
 import java.sql.Timestamp;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,9 +20,11 @@ public class Item {
 	private Long id;
 	private String name;
 	private String planId;
-	private String skuId;
+	@OneToOne
+	private HardSKU skuId;
 	private int quantity;
 	private String telephoneNumber;
+	@Enumerated(EnumType.STRING)
 	private OrderStatus status;
 	private boolean complete;
 	@OneToOne
@@ -48,10 +52,10 @@ public class Item {
 	public void setPlanId(String planId) {
 		this.planId = planId;
 	}
-	public String getSkuId() {
+	public HardSKU getSkuId() {
 		return skuId;
 	}
-	public void setSkuId(String skuId) {
+	public void setSkuId(HardSKU skuId) {
 		this.skuId = skuId;
 	}
 	public Integer getQuantity() {

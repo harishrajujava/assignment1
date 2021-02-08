@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,6 +26,7 @@ public class Order implements Serializable {
 	private Long customerId;
 	@OneToMany
 	private List<Item> items;
+	@Enumerated(EnumType.STRING)
 	private OrderStatus status;
 	private boolean complete;
 	@ManyToOne
